@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import {AiFillHeart, AiOutlineHeart} from "react-icons/ai";
 import hasAlreadyLiked from "../utils/Global";
 import Link from "next/link";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 
 const Heart = ({type, id}) => {
     const [loading, setLoading] = useState(true);
-    const [hasClicked, setHasClicked] = useState(false);
+    // const [hasClicked, setHasClicked] = useState(false);
 
     const clicked = () => {
         const liked = localStorage.getItem("liked")
@@ -37,17 +37,23 @@ const Heart = ({type, id}) => {
                 id: id
             }]));
         }
-        setHasClicked(true);
+        window.location.reload();
+        // setHasClicked(true);
     }
 
     useEffect(() => {
         setLoading(false);
     }, [])
 
-    useEffect(() => {
-        // useRouter().reload();
-        setHasClicked(false);
-    }, [, hasClicked])
+    // useEffect(() => {
+    //     <>
+    //         {
+    //             useRouter().refresh()
+    //         }
+    //     </>
+        
+    //     setHasClicked(false);
+    // }, [, hasClicked])
     
     return (
         // <Link href={"/like/" + type + "/" + id}>
