@@ -1,0 +1,57 @@
+
+
+.header {
+    background-color: #444444;
+    color: #FFFFFF;
+    
+    .div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        width: 95%;
+        #burger {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+        }
+        input {
+            max-height: 40px;
+            min-height: 20px;
+            max-width: 120px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            font-size: 10px;
+            box-shadow: inset 0px -4px 10px 1px #6E6E6E, 3px 5px;
+        }
+    }
+
+    > ul {
+        border-top: 1px solid #FFFFFF;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        padding: 0;
+        > li {
+            font-weight: bold;
+            > ul {
+                font-weight: normal;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+        }
+    }
+}
+
+#artists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}

@@ -1,0 +1,43 @@
+
+#albums {
+    
+    display: flex;
+    // justify-content: flex-start;
+    // flex-wrap: wrap;
+    gap: 60px;
+    overflow-x: scroll;
+    margin: 0 auto;
+    width: 90%;
+    height: 200px;
+    align-items: center;
+    .album:first-child{
+        margin-left: 60px;
+    }
+    .album:last-child{
+        margin-right: 60px;
+    }
+    .album {
+        display: flex;
+        
+        gap: 10px;
+        // justify-content: start;
+        width: 280px;
+        height: 100px;
+        transition: transform 400ms;
+        background-color: rgb(49, 49, 49);
+        .album_image {
+            // margin: 0 auto;
+            min-width: 50px;
+            max-width: 100px;
+            
+        }
+    
+        .album_name {
+            color: #FFFFFF;
+            font-size: 12px;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
