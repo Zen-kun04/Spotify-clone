@@ -31,7 +31,7 @@ const DetailsPage = async ({params}) => {
                     {
                     albumsRes.albums.items.map((key, value) => {
                         return (
-                            <Link href={'/'}>
+                            <Link href={'/details/album/' + albumsRes.albums.items[value].id}>
                                 <div key={"album_" + value} className={styles.album}>
                                     <Album img={albumsRes.albums.items[value].images[0].url} title={albumsRes.albums.items[value].name}/>
                                 </div>

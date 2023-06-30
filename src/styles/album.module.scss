@@ -41,3 +41,56 @@
         }
     }
 }
+
+.album {
+    display: flex;
+    
+    gap: 10px;
+    // justify-content: start;
+    width: 280px;
+    height: 100px;
+    transition: transform 400ms;
+    background-color: rgb(49, 49, 49);
+    .album_image {
+        // margin: 0 auto;
+        min-width: 50px;
+        max-width: 100px;
+        
+    }
+
+    .album_name {
+        color: #FFFFFF;
+        font-size: 12px;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#tracks {
+    background-color: rgb(179, 179, 179);
+    width: 30%;
+    margin: 15px auto;
+    border-radius: 10px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.track {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #444444;
+    &:last-child {
+        border-bottom: none;
+    }
+}
