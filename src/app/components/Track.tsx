@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/album.module.scss";
+import Heart from "./Heart";
 
 const Track = ({ track }) => {
     const {name} = track;
@@ -10,6 +11,7 @@ const Track = ({ track }) => {
         <div className={styles.track}>
             <p>{name}</p>
             <i>{realtime}</i>
+            <Heart type="track" id={track.id} />
         </div>
     )
 }
