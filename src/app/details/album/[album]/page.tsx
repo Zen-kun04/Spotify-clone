@@ -17,7 +17,7 @@ const DetailsPage = async ({params}) => {
     const albumId = params.album
     
     // const results = use(getters(albumId));
-    const token = await getAPIKey().then(k => k);
+    const token = await getAPIKey();
     const results = await api("albums/" + albumId, {
         method: "GET",
         data: "",

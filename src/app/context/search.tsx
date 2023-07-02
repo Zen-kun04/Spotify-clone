@@ -9,7 +9,6 @@ const SearchContext = createContext({
 
 export const SearchContextProvider = ({children}) => {
     const [results, setResults] = useState([]);
-    // console.log(results);
     
     return (
         <SearchContext.Provider value={{results, setResults}}>

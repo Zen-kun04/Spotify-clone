@@ -21,4 +21,11 @@ const hasAlreadyLiked = (params: likeParams) => {
     return false;
 }
 
+export const getAllLikes = () => {
+    if(localStorage.getItem("liked") !== null){
+        return JSON.parse(localStorage.getItem("liked")!);
+    }
+    return [{}];
+}
+
 export default hasAlreadyLiked;

@@ -17,7 +17,7 @@ Si api_key est null il va reset la variable (pour lui ajouter une clé valable)
 et finalement retourner la valeur de api_key
 */
 export async function getAPIKey(): Promise<string> {
-    if(api_key === null){
+    if(api_key === null || api_key === undefined){
         await resetAPIKey();
     }else {
         try {
@@ -29,6 +29,9 @@ export async function getAPIKey(): Promise<string> {
             }).then(async (response) => {
                 if(response.status === 401) {
                     await resetAPIKey();
+                }else if (response.status === 400) {
+                    console.log("Error: " + response);
+                    
                 }
             });
 
@@ -56,30 +59,6 @@ export async function resetAPIKey() {
         
     });
 }
-
-
-// export async function getArtistById(id: string): Promise<AxiosResponse> {
-//     return axios.get(`https://api.spotify.com/v1/artists/${id}`, 
-//     {
-//         headers: {
-//             'Content-Type': 'application/x-www-form-urlencoded',
-//             'Authorization': `Bearer ${api_key}`
-//         }
-//     }).then(response => response.data);
-// }
-
-
-// export async function search(type: string, query: string): Promise<AxiosResponse> {
-//     return axios.get(`https://api.spotify.com/v1/search?q=${query}&type=${type}`, 
-//     {
-//         headers: {
-//             'Content-Type': 'application/x-www-form-urlencoded',
-//             'Authorization': `Bearer ${api_key}`
-//         }
-//     }).then(response => response.data);
-// }
-
-
 
 /*
 la fonction async "api" prend en paramètre "endpoint" (string) et "params" (un JSON).
@@ -111,7 +90,6 @@ console.log(test)
 */
 export async function api(endpoint: string, params: SpotifyAPI): Promise<AxiosResponse> {
     
-    console.log(endpoint + " => " + params.data)
     
     // const key = await getAPIKey().then(k => k);
     

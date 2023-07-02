@@ -7,7 +7,6 @@ import Link from "next/link";
 import { NextResponse } from "next/server";
 
 const DetailsPage = async ({params}) => {
-    console.log(params);
     if(Object.keys(params)[0] === "artist"){
         const artistId = params.artist
         

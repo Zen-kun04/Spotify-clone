@@ -1,7 +1,6 @@
 "use client"
 
 import style from '@/styles/header.module.scss'
-// import Search from './Search';
 import Link from 'next/link';
 import {RxHamburgerMenu} from 'react-icons/rx'
 import { api } from '../utils/SpotifyAPI';
@@ -9,7 +8,6 @@ import { useRef, useState } from 'react';
 import Artist from './Artist';
 
 const Header = ({token}) => {
-    // const {results, setResults} = useSearchContext();
     const [results, setResults] = useState([]);
     const [found, setFound] = useState(false);
     const searchRef = useRef();
